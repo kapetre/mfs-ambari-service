@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration supports_final="true">
+
+    <property>
+        <name>mfs.datanode.dir</name>
+        <value>/dev/xvdb</value>
+        <display-name>DataNode disks</display-name>
+        <description>Comma seperated list of disks to use for MFS
+        </description>
+        <final>true</final>
+        <value-attributes>
+            <type>directories</type>
+        </value-attributes>
+        <on-ambari-upgrade add="true"/>
+    </property>
+
+    <property>
+        <name>mfs.cluster.name</name>
+        <value>4thelulz</value>
+        <display-name>MFS Cluster Name</display-name>
+        <description>MFS Cluster Name
+        </description>
+    </property>
+</configuration>

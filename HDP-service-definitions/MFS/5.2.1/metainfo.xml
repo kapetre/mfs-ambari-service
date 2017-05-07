@@ -1,0 +1,75 @@
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>MFS</name>
+            <displayName>maprfs lulz</displayName>
+            <comment>A hacked together version of mfs on ambari. lol.</comment>
+            <version>5.2.1</version>
+            <components>
+                <component>
+                    <name>CLDB</name>
+                    <displayName>CLDB</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+                    <versionAdvertised>true</versionAdvertised>
+                    <commandScript>
+                        <script>scripts/cldb.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>10000</timeout>
+                    </commandScript>
+                </component>
+
+
+                <component>
+                    <name>MFS_FILESERVER</name>
+                    <displayName>MFS File Server Node</displayName>
+                    <category>SLAVE</category>
+                    <cardinality>1+</cardinality>
+                    <versionAdvertised>false</versionAdvertised>
+                    <auto-deploy>
+                        <enabled>true</enabled>
+                    </auto-deploy>
+                    <commandScript>
+                        <script>scripts/worker.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>1200</timeout>
+                    </commandScript>
+
+                </component>
+
+            </components>
+
+            <osSpecifics>
+                <osSpecific>
+                    <osFamily>any</osFamily>
+                    <packages>
+                        <package>
+                            <name>mapr-fileserver</name>
+                        </package>
+                        <package>
+                            <name>mapr-nfs</name>
+                        </package>
+                        <package>
+                            <name>mapr-webserver</name>
+                        </package>
+                        <package>
+                            <name>mapr-cldb</name>
+                        </package>
+                        <package>
+                            <name>mapr-zookeeper</name>
+                        </package>
+
+                    </packages>
+                </osSpecific>
+            </osSpecifics>
+
+            <commandScript>
+                <script>scripts/service_check.py</script>
+                <scriptType>PYTHON</scriptType>
+                <timeout>300</timeout>
+            </commandScript>
+
+        </service>
+    </services>
+</metainfo>
