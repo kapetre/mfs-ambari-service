@@ -1,0 +1,28 @@
+{
+  "name": "default",
+  "description": "default quick links configuration",
+  "configuration": {
+    "protocol":
+    {
+      "type":"https"
+    },
+
+    "links": [
+      {
+        "name": "cldb_web_ui",
+        "label": "CLDB WEB UI",
+        "requires_user_name": "false",
+        "component_name": "CLDB",
+        "url": "%@://%@:%@",
+        "port":{
+          "http_property": "mfs.ui.port",
+          "http_default_port": "8443",
+          "https_property": "mfs.ui.port",
+          "https_default_port": "8443",
+          "regex": "^(\\d+)$",
+          "site": "mfs-site"
+        }
+      }
+    ]
+  }
+}

@@ -23,4 +23,12 @@
         <description>MFS Cluster Name
         </description>
     </property>
+
+    <property>
+        <name>mfs.ui.port</name>
+        <value>8443</value>
+        <display-name>MFS Web UI Port</display-name>
+        <description>MFS Web UI Port
+        </description>
+    </property>
 </configuration>
