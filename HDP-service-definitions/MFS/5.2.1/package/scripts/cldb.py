@@ -15,10 +15,11 @@ class cldb(Script):
     # Install packages listed in metainfo.xml
     self.install_packages(env)
 
+
     # Run Mapr Configure
-    #cmd = params.mapr_serv_configure + params.cldb_master + ' -Z '+ params.zookeeper_host+':'+params.zk_client_port + ' -N ' +params.cldb_cluster_name +  ' -D ' + params.mfs_disk
-    #Execute('echo "Running ' + cmd + '"')
-    #Execute(cmd)
+    cmd = params.mapr_serv_configure + ' -C ' + params.cldb_master + ' -Z '+ params.mapr_zookeeper_host+':'+params.mapr_zk_client_port + ' -N ' +params.cldb_cluster_name
+    Execute('echo "Running ' + cmd + '"')
+    Execute(cmd)
 
 
     self.configure(env)

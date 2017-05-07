@@ -7,7 +7,7 @@ from subprocess import call
 
 import cPickle as pickle
 
-class worker(Script):
+class fileserver(Script):
 
     def install(self, env):
         import params
@@ -33,7 +33,7 @@ class worker(Script):
     def start(self, env):
         import params
 
-        cmd = 'systemctl start mapr-warden'
+        cmd = 'service mapr-warden start'
 
         Execute('echo "Running cmd: ' + cmd + '"')
         Execute(cmd)
@@ -41,11 +41,15 @@ class worker(Script):
     def stop(self, env):
         import params
 
-        cmd = 'systemctl stop mapr-mfs'
+        cmd = 'service mapr-mfs stop '
 
         Execute('echo "Running cmd: ' + cmd + '"')
         Execute(cmd)
 
+        cmd = 'service mapr-nfsserver stop'
+
+        Execute('echo "Running cmd: ' + cmd + '"')
+        Execute(cmd)
 
 
     def status(self, env):
@@ -56,4 +60,4 @@ class worker(Script):
 
 
 if __name__ == "__main__":
-    worker().execute()
+    fileserver().execute()

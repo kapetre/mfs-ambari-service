@@ -7,7 +7,7 @@ from subprocess import call
 
 import cPickle as pickle
 
-class worker(Script):
+class warden(Script):
 
     def install(self, env):
         import params
