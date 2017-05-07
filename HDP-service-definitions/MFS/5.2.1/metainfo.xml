@@ -52,12 +52,15 @@
                         </package>
                         <package>
                             <name>mapr-webserver</name>
+                            <condition>should_install_cldb_pkgs</condition>
                         </package>
                         <package>
                             <name>mapr-cldb</name>
+                            <condition>should_install_cldb_pkgs</condition>
                         </package>
                         <package>
                             <name>mapr-zookeeper</name>
+                            <condition>should_install_cldb_pkgs</condition>
                         </package>
 
                     </packages>

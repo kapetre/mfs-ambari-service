@@ -25,7 +25,7 @@ cldb_cluster_name =config['configurations']['mfs-site']['mfs.cluster.name']
 
 
 mapr_pid = '/opt/mapr/pid/warden.pid'
-
+cldb_pid = '/opt/mapr/pid/cldb.pid'
 
 # mfs disks
 mfs_disk = config['configurations']['mfs-site']['mfs.datanode.dir']

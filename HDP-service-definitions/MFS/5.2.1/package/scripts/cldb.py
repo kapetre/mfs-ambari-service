@@ -50,10 +50,9 @@ class cldb(Script):
   def status(self, env):
     import params
 
-    cmd = 'systemctl status mapr-cldb'
-
-    Execute('echo "Running cmd: ' + cmd + '"')
-    Execute(cmd)
+    import params
+    pid_file = params.cldb_pid
+    check_process_status(pid_file)
 
 if __name__ == "__main__":
   cldb().execute()
