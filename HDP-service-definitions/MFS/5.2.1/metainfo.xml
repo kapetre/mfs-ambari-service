@@ -31,7 +31,23 @@
                         <enabled>true</enabled>
                     </auto-deploy>
                     <commandScript>
-                        <script>scripts/worker.py</script>
+                        <script>scripts/fileserver.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>1200</timeout>
+                    </commandScript>
+                </component>
+
+                <component>
+                    <name>MAPR_WARDEN</name>
+                    <displayName>MAPR Warden Hosts</displayName>
+                    <category>SLAVE</category>
+                    <cardinality>1+</cardinality>
+                    <versionAdvertised>false</versionAdvertised>
+                    <auto-deploy>
+                        <enabled>true</enabled>
+                    </auto-deploy>
+                    <commandScript>
+                        <script>scripts/warden.py</script>
                         <scriptType>PYTHON</scriptType>
                         <timeout>1200</timeout>
                     </commandScript>

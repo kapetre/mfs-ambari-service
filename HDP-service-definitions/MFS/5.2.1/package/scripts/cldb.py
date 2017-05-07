@@ -33,7 +33,7 @@ class cldb(Script):
   def start(self, env):
     import params
 
-    cmd = 'systemctl start mapr-warden'
+    cmd = 'systemctl start mapr-cldb'
 
     Execute('echo "Running cmd: ' + cmd + '"')
     Execute(cmd)

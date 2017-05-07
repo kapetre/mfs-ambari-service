@@ -31,4 +31,12 @@
         <description>MFS Web UI Port
         </description>
     </property>
+
+    <property>
+        <name>mapr.zk.port</name>
+        <value>5181</value>
+        <display-name>Mapr Zookeeper Port</display-name>
+        <description>Mapr zookeeper workaround - using its own port
+        </description>
+    </property>
 </configuration>

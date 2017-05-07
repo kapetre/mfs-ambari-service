@@ -18,7 +18,7 @@ class worker(Script):
         import params
 
         # Run Mapr Configure
-        cmd = params.mapr_serv_configure + params.cldb_master + ' -Z '+ params.zookeeper_host+':'+params.zk_client_port + ' -N ' +params.cldb_cluster_name +  ' -D ' + params.mfs_disk
+        cmd = params.mapr_serv_configure + ' -C ' + params.cldb_master + ' -Z '+ params.mapr_zookeeper_host+':'+params.mapr_zk_client_port + ' -N ' +params.cldb_cluster_name +  ' -D ' + params.mfs_disk
         Execute('echo "Running ' + cmd + '"')
         Execute(cmd)
 
@@ -45,6 +45,8 @@ class worker(Script):
 
         Execute('echo "Running cmd: ' + cmd + '"')
         Execute(cmd)
+
+
 
     def status(self, env):
         import params

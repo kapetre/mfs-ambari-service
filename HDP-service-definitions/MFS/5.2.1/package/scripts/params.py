@@ -24,19 +24,23 @@ cldb_master = config['clusterHostInfo']['cldb_hosts'][0]
 cldb_cluster_name =config['configurations']['mfs-site']['mfs.cluster.name']
 
 
-mapr_pid = '/opt/mapr/pid/warden.pid'
+# PID Files For Status check
+mapr_pid = '/opt/mapr/pid/mfs.pid'
+warden_pid = '/opt/mapr/pid/warden.pid'
 cldb_pid = '/opt/mapr/pid/cldb.pid'
+
 
 # mfs disks
 mfs_disk = config['configurations']['mfs-site']['mfs.datanode.dir']
 
 
 # Mapr installer strings
-mapr_serv_configure = '/opt/mapr/server/configure.sh -C '
+mapr_serv_configure = '/opt/mapr/server/configure.sh'
 
-# Zookeeper properties
-zookeeper_host = config['clusterHostInfo']['zookeeper_hosts'][0]
-zk_client_port = config['configurations']['zoo.cfg']['clientPort']
+
+# Zookeeper workaround
+mapr_zookeeper_host = config['clusterHostInfo']['cldb_hosts'][0]
+mapr_zk_client_port = default("/configurations/mfs-site/mapr.zk.port", 5181)
 
 
 # node excludes
